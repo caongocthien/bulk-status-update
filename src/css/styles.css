@@ -1,0 +1,85 @@
+.all-checkbox,
+.row-checkbox {
+  --kuc-checkbox-menu-width: 50px;
+}
+.kuc-dialog-1-17-1__dialog__content {
+  min-height: 300px;
+  max-height: 350px;
+}
+
+.dialog-footer {
+  display: flex;
+  justify-content: space-around;
+}
+
+.action-assignees-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.wrapper-action {
+  margin-bottom: 24px;
+}
+
+.assignee-list-view {
+  margin: 0;
+}
+
+.assignee-list-view li {
+  font-size: 14px;
+  color: #333333;
+  line-height: 2;
+}
+
+.assignee-list-label {
+  font-size: 14px;
+  color: #333333;
+}
+
+.wrapper-assignee-list .assignee-list-label {
+  margin: 0;
+  padding: 4px 0 8px 0;
+  line-height: 1.5;
+}
+
+.dialog-bulk-status-update {
+  --kuc-dialog-max-width: 600px;
+}
+
+/* .action-dd .kuc-dropdown-1-17-1__group {
+  display: flex;
+  align-items: center;
+} */
+
+/* .action-dd .kuc-dropdown-1-17-1__group__toggle {
+  margin-left: 32px;
+} */
+
+.assignee-list-wrapper .kuc-base-label-1-17-1__text,
+.assignee-list-wrapper .assignee-list-label,
+.action-dd .kuc-base-label-1-17-1__text,
+.action-label {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.required-symbol {
+  font-size: 20px;
+  vertical-align: -3px;
+  color: #e74c3c;
+  margin-left: 4px;
+  line-height: 1;
+}
+
+.no-record {
+  margin-top: 50%;
+}
+
+.wrapper-action {
+  display: flex;
+  align-items: center;
+}
+
+.wrapper-action-label {
+  margin-right: 12px;
+}
