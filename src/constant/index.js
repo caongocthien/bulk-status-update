@@ -94,7 +94,7 @@ export const initialStatusAssignee = {
 };
 
 export const tableConst = {
-  TABLE_EMPTY: '(No records need updating)',
+  TABLE_EMPTY: '(No records need updating 2)',
 };
 
 export const componentClass = {
