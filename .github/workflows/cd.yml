@@ -1,11 +1,12 @@
 # This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
 
-name: Node.js CI
+name: CI action
 
 on:
   push:
-    branches: [ "main" ]
+    tags:
+      - '*'
 
 jobs:
   build:
@@ -18,14 +19,22 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-    - uses: actions/checkout@v4
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v4
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: npm install
-    - run: npm run build
-    - run: ls
-    - run: npm install -g @kintone/customize-uploader
-    - run: kintone-customize-uploader customize-manifest.json --base-url ${{ vars.KINTONE_BASE_URL }} --username ${{ secrets.KINTONE_USERNAME}} --password ${{ secrets.KINTONE_PASSWORD}}
+    - name: Install dependencies
+      run: npm install
+      
+    - name: Build project
+      run: npm run build
+
+    - name: Install uploader package
+      run: npm install -g @kintone/customize-uploader
+
+    - name: Upload to Kintone ${{ vars.KINTONE_BASE_URL }}
+      run: kintone-customize-uploader customize-manifest.json --base-url ${{ vars.KINTONE_BASE_URL }} --username ${{ secrets.KINTONE_USERNAME}} --password ${{ secrets.KINTONE_PASSWORD}}
