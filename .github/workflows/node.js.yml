@@ -28,4 +28,4 @@ jobs:
     - run: npm run build
     - run: ls
     - run: npm install -g @kintone/customize-uploader
-    - run: kintone-customize-uploader customize-manifest.json --base-url https://cathi.kintone.com/ --username caongocthien36@gmail.com --password Bentre@345
+    - run: kintone-customize-uploader customize-manifest.json --base-url ${{ vars.KINTONE_BASE_URL }} --username ${{ secrets.KINTONE_USERNAME}} --password ${{ secrets.KINTONE_PASSWORD}}
