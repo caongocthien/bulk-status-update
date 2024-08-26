@@ -97,7 +97,7 @@ const setupEventListeners = (event, dialog, states) => {
     handleCancelDialog(states, dialog);
   });
 
-  dialog.addEventListener('close', () => {
+  dialog.addEventListener("close", () => {
     states.resetStates();
   });
 };
