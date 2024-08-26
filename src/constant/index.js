@@ -88,6 +88,7 @@ export const initialStatusAssignee = {
     type: 'FIELD_ENTITY',
   },
   ANYBODY: {
+    // eslint-disable-next-line quotes
     label: "Don't need assignee for next status",
     value: 'Anybody',
   },
