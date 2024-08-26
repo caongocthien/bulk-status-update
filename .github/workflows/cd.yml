@@ -36,5 +36,14 @@ jobs:
     - name: Install uploader package
       run: npm install -g @kintone/customize-uploader
 
+  deploy:
+  
+    runs-on: ubuntu-latest
+    needs: build
+    
+    steps:  
+    - name: Check location
+      run: ls
+      
     - name: Upload to Kintone ${{ vars.KINTONE_BASE_URL }}
       run: kintone-customize-uploader customize-manifest.json --base-url ${{ vars.KINTONE_BASE_URL }} --username ${{ secrets.KINTONE_USERNAME}} --password ${{ secrets.KINTONE_PASSWORD}}
