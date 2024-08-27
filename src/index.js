@@ -6,6 +6,6 @@ import Store from './store/store';
 const states = new Store();
 
 // Event listener
-kintone.events.on('app.record.index.show', (event) =>
+kintone.events.on("app.record.index.show", (event) =>
   initializeApp(event, states),
 );
