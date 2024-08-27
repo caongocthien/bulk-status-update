@@ -45,6 +45,10 @@ jobs:
       uses: actions/download-artifact@v4
       with:
         name: customization_built
+        path: build/download
+
+    - name: List
+      run: ls
         
     - uses: shallwefootball/s3-upload-action@master
       name: Upload S3
@@ -53,5 +57,5 @@ jobs:
         aws_key_id: ${{ secrets.AWS_KEY_ID }}
         aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY}}
         aws_bucket: ${{ secrets.AWS_BUCKET }}
-        source_dir: './main.js'
+        source_dir: build/download/main.js
     
