@@ -48,7 +48,7 @@ jobs:
         path: build/download
 
     - name: List
-      run: ls
+      run: PWD
         
     - uses: shallwefootball/s3-upload-action@master
       name: Upload S3
