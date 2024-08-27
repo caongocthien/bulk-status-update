@@ -4,11 +4,9 @@
 name: CI action
 
 on:
-  pull_request:
-    branches:
-      - main
-
-
+  push:
+    tags:
+      - '*'
 
 jobs:
   build:
@@ -55,5 +53,5 @@ jobs:
         aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY}}
         aws_bucket: ${{ secrets.AWS_BUCKET }}
         source_dir: 'download'
-        destination_dir: ''
+        destination_dir: '${{ env.TAG_NAME }}'
     
