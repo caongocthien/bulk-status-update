@@ -29,6 +29,7 @@ jobs:
       run: npx eslint . --ext .js --max-warnings 0
     
   build:
+    needs: test
     runs-on: ubuntu-latest
     steps:
     - name: Checkout code
