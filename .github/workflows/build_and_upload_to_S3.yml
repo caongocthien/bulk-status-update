@@ -44,6 +44,9 @@ jobs:
       with:
         name: customization_built
         path: 'download'
+
+    - name: Echo
+      run: echo ${{ env.TAG_NAME }}
         
     - uses: shallwefootball/s3-upload-action@master
       name: Upload S3
@@ -53,5 +56,5 @@ jobs:
         aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY}}
         aws_bucket: ${{ secrets.AWS_BUCKET }}
         source_dir: 'download'
-        destination_dir: '${{ env.TAG_NAME }}'
+        destination_dir: ${{ env.TAG_NAME }}
     
