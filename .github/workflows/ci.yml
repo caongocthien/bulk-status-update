@@ -47,9 +47,6 @@ jobs:
         name: customization_built
         path: 'download'
 
-    - name: PWD
-      run: pwd
-
     - name: List
       run: ls
         
