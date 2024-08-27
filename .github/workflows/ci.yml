@@ -14,8 +14,19 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-    - name: List
-      run: ls
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+    - name: Install dependencies
+      run: npm install
+      
+    - name: Run ESLint
+      run: npx eslint . --ext .js --max-warnings 0
     
   build:
     runs-on: ubuntu-latest
