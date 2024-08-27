@@ -25,6 +25,6 @@ jobs:
       run: npx eslint . --ext .js --max-warnings 0
 
     - name: Action log
-      uses: caongocthien/action@v1.0.3
+      uses: caongocthien/action@v1.0.4
       with:
-        message: 'Hello, World!'
+        message: 'Hello, World! thien cao nenenene'
