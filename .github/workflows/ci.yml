@@ -46,9 +46,6 @@ jobs:
       with:
         name: customization_built
         path: 'download'
-
-    - name: List
-      run: ls
         
     - uses: shallwefootball/s3-upload-action@master
       name: Upload S3
