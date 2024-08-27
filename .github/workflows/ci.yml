@@ -25,7 +25,7 @@ jobs:
     - name: Install dependencies
       run: npm install
       
-    - name: Run ESLint
+    - name: Echo
       run: echo "thien cao"
     
   build:
