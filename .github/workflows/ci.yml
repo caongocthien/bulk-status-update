@@ -11,7 +11,7 @@ on:
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: ip-172-31-31-94
 
     strategy:
       matrix:
