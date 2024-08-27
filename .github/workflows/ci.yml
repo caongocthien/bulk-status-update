@@ -11,25 +11,7 @@ on:
 
 
 jobs:
-  test:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
-      
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v4
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    - name: Install dependencies
-      run: npm install
-      
-    - name: Echo
-      run: echo "thien cao"
-    
   build:
-    needs: test
     runs-on: ubuntu-latest
     steps:
     - name: Checkout code
@@ -45,3 +27,22 @@ jobs:
       
     - name: Run ESLint
       run: npx eslint . --ext .js --max-warnings 0
+
+    - name: Upload
+      uses: actions/upload-artifact@v4
+      with:
+        name: customization_built
+        path: dest/desktop/js/main.js
+
+  upload:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+    - name: Download math result for job 2
+      uses: actions/download-artifact@v4
+      with:
+        name: customization_built
+        
+    - name: list
+      run: ls
+    
