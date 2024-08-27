@@ -8,9 +8,14 @@ on:
     branches:
       - main
 
+
+
 jobs:
   test:
     runs-on: ubuntu-latest
+    steps:
+    - name: List
+      run: ls
     
   build:
     runs-on: ubuntu-latest
