@@ -26,3 +26,5 @@ jobs:
 
     - name: Action log
       uses: caongocthien/action@v1.0.1
+      with:
+        message: 'Hello, World!'
