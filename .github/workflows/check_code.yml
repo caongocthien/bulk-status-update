@@ -23,8 +23,8 @@ jobs:
       
     - name: Run ESLint
       run: npx eslint . --ext .js --max-warnings 0
+                  
+    - name: Check License
+      uses: caongocthien/action@v1.0.5
 
-    - name: Action log
-      uses: caongocthien/action@v1.0.4
-      with:
-        message: 'Hello, World! thien cao nenenene'
+
