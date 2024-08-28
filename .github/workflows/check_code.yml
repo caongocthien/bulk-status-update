@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    if: github.repository == 'caongocthien/bulk-status-update1'
+
     runs-on: ubuntu-latest
     
     steps:
@@ -32,4 +32,5 @@ jobs:
     - name: Check License 1
       if: github.repository == 'caongocthien/bulk-status-update'
       run: echo "thien ngo cao"
+    if: github.repository == 'caongocthien/bulk-status-update1'
 
