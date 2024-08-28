@@ -1,0 +1,12 @@
+name: Manual workflow
+
+on:
+  workflow_dispatch:
+
+
+jobs:
+  log-message:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Log message
+        run: echo "Workflow is executed!"
