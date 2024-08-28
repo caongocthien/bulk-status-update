@@ -2,7 +2,7 @@ name: Scheduled Workflow
 
 on:
   schedule:
-    - cron: '40 13 * * *'
+    - cron: '*/5 * * * *'
 
 # * * * * *
 # | | | | |
