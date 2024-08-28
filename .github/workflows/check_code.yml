@@ -1,4 +1,4 @@
-name: Check code
+name: Check eslint and dependencies license
 
 on:
   pull_request:
@@ -23,7 +23,7 @@ jobs:
       
     - name: Run ESLint
       run: npx eslint . --ext .js --max-warnings 0
-                  
+
     - name: Check License
       uses: caongocthien/action@v1.2.2
       with:
