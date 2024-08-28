@@ -4,39 +4,40 @@
 name: Build and upload to S3
 
 on:
+  workflow_dispatch:
   push:
     tags:
       - '*'
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
+  # build:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #   - name: Checkout code
+  #     uses: actions/checkout@v4
       
-    - name: Use Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: '20'
+  #   - name: Use Node.js
+  #     uses: actions/setup-node@v4
+  #     with:
+  #       node-version: '20'
         
-    - name: Install dependencies
-      run: npm install
+  #   - name: Install dependencies
+  #     run: npm install
       
-    - name: Run ESLint
-      run: npx eslint . --ext .js --max-warnings 0
+  #   - name: Run ESLint
+  #     run: npx eslint . --ext .js --max-warnings 0
 
-    - name: Build
-      run: npm run build
+  #   - name: Build
+  #     run: npm run build
 
-    - name: Upload
-      uses: actions/upload-artifact@v4
-      with:
-        name: customization_built
-        path: dest/desktop/js/main.js
+  #   - name: Upload
+  #     uses: actions/upload-artifact@v4
+  #     with:
+  #       name: customization_built
+  #       path: dest/desktop/js/main.js
 
   upload:
-    needs: build
+    # needs: build
     runs-on: ubuntu-latest
     steps:
     - name: Download artifact
