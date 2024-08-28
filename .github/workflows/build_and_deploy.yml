@@ -1,4 +1,4 @@
-name: CD action
+name: Build and deploy to Kintone instance
 
 on:
   push:
@@ -6,14 +6,8 @@ on:
       - 'main'
 
 jobs:
-  build:
-
+  build-and-deploy:
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [20.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
     - name: Checkout code
@@ -31,17 +25,5 @@ jobs:
     - name: Build project
       run: npm run build
 
-    - name: Install uploader package
-      run: npm install -g @kintone/customize-uploader
-
-  deploy:
-  
-    runs-on: ubuntu-latest
-    needs: build
-    
-    steps:  
-    - name: Check location
-      run: ls
-      
     - name: Upload to Kintone ${{ vars.KINTONE_BASE_URL }}
       run: kintone-customize-uploader customize-manifest.json --base-url ${{ vars.KINTONE_BASE_URL }} --username ${{ secrets.KINTONE_USERNAME}} --password ${{ secrets.KINTONE_PASSWORD}}
