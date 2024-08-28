@@ -25,6 +25,7 @@ jobs:
       run: npx eslint . --ext .js --max-warnings 0
                   
     - name: Check License
-      uses: caongocthien/action@v1.0.6
-
+      uses: caongocthien/action@v1.0.9
+      with:
+        licenses: 'MIT, ISC'
 
