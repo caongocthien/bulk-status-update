@@ -3,6 +3,9 @@ name: Scheduled Workflow
 on:
   schedule:
     - cron: "25 15 * * *"
+  push:
+    branches:
+      - main
 
 # * * * * *
 # | | | | |
@@ -19,4 +22,4 @@ jobs:
     steps:
 
     - name: Run a script
-      run: echo "This job runs"
+      run: echo $(date +"%Y-%m-%d %H:%M:%S")
