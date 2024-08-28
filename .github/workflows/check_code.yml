@@ -29,7 +29,7 @@ jobs:
       with:
         licenses: 'MIT'
 
-    - name: Check License
+    - name: Check License 1
       if: github.repository == 'caongocthien/bulk-status-update'
       run: echo "thien ngo cao"
 
