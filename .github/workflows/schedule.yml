@@ -2,10 +2,7 @@ name: Scheduled Workflow
 
 on:
   schedule:
-    - cron: "25 15 * * *"
-  push:
-    branches:
-      - main
+    - cron: "31 8 * * *"
 
 # * * * * *
 # | | | | |
