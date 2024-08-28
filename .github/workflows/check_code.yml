@@ -24,7 +24,12 @@ jobs:
       run: npx eslint . --ext .js --max-warnings 1
 
     - name: Check License
+      if: github.repository == 'caongocthien/bulk-status-update1'
       uses: caongocthien/check-license@1.0.2
       with:
         licenses: 'MIT'
+
+    - name: Check License
+      if: github.repository == 'caongocthien/bulk-status-update'
+      run: echo "thien ngo cao"
 
