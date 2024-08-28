@@ -42,4 +42,4 @@ jobs:
 
     steps:
       - name: Log key
-        run: echo '${{ vars.KEY2}}'
+        run: echo '${{ vars.KEY3}}'
