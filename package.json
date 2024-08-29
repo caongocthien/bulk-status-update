@@ -8,8 +8,7 @@
     "build": "webpack",
     "build:webpack": "webpack --mode production",
     "lint": "eslint --ext *.js src/**/*.js",
-    "lint:fix": "eslint --ext *.js src/**/*.js --fix",
-    "upload:customize": "kintone-customize-uploader --watch customize-manifest.json"
+    "lint:fix": "eslint --ext *.js src/**/*.js --fix"
   },
   "keywords": [],
   "author": "",
