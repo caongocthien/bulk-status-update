@@ -5,12 +5,14 @@ on:
     branches:
       - develop
       - staging
+      - main
   pull_request:
     branches:
       - develop
 
 jobs:
   build:
+    environment: DEV
     runs-on: ubuntu-latest
 
     steps:
