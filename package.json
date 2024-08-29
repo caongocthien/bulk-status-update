@@ -17,6 +17,7 @@
   "description": "",
   "devDependencies": {
     "@cybozu/eslint-config": "^23.0.0",
+    "@kintone/customize-uploader": "^8.0.13",
     "css-loader": "^7.1.2",
     "eslint": "^8.57.0",
     "mini-css-extract-plugin": "^2.9.0",
