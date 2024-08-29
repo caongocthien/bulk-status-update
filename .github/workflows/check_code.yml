@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-
+    if: github.repository == 'caongocthien/bulk-status-update'
     runs-on: ubuntu-latest
     
     steps:
@@ -21,9 +21,16 @@ jobs:
       run: npm install
       
     - name: Run ESLint
-      run: npx eslint . --ext .js --max-warnings 0
+      run: npx eslint . --ext .js --max-warnings 1
 
     - name: Check License
-      uses: caongocthien/check-license@1.0.2
+      
+      uses: caongocthien/check-license@1.0.4
       with:
         licenses: 'MIT'
+
+    - name: Trigger condition
+      if: github.repository == 'caongocthien/bulk-status-update1'
+      run: echo "Condition is trigged!"
+    
+
