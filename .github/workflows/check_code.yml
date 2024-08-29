@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-
+    if: github.repository == 'caongocthien/bulk-status-update'
     runs-on: ubuntu-latest
     
     steps:
