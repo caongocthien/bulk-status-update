@@ -25,7 +25,7 @@ jobs:
 
     - name: Check License
       
-      uses: caongocthien/check-license@1.0.2
+      uses: caongocthien/check-license@1.0.4
       with:
         licenses: 'MIT'
 
