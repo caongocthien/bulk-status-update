@@ -24,5 +24,8 @@ jobs:
     - name: Build project
       run: npm run build
 
+    - name: Install uploader
+      run: npm i @kintone/customize-uploader
+
     - name: Upload to Kintone ${{ vars.KINTONE_BASE_URL }}
       run: kintone-customize-uploader customize-manifest.json --base-url ${{ vars.KINTONE_BASE_URL }} --username ${{ secrets.KINTONE_USERNAME}} --password ${{ secrets.KINTONE_PASSWORD}}
